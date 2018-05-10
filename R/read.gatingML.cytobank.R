@@ -51,7 +51,7 @@ read.gatingML.cytobank <- function(file, ...){
         orig_params <- sb[, params]
         orig_params <- strsplit(split = ":", orig_params)[[1]]
         params <- parameters(obj)
-        ind <- sapply(orig_params, function(orig_param)grep(paste0(orig_param, "$"), params))
+        ind <- sapply(orig_params, function(orig_param) grep(orig_param, params, fixed=TRUE))
 
         orig_param <- orig_params[ind]
 
